@@ -18,18 +18,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     FJSStarRatingView * startView = [FJSStarRatingView new];
-    startView.backgroundColor = [UIColor blackColor];
+//    startView.backgroundColor = [UIColor blackColor];
+    startView.starScore = ^(CGFloat score)
+    {
+        self.navigationItem.title = [NSString stringWithFormat:@"%.1f",score];
+    };
     [self.view addSubview:startView];
     [startView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).with.offset(40);
         make.right.equalTo(self.view).with.offset(-40);
         make.top.equalTo(self.view).with.offset(100);
     }];
-    
-    
-    startView.score = 100.f;
-    
-    
+        
 }
 
 

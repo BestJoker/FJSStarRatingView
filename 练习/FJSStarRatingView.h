@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @interface FJSStarRatingView : UIView
+@property (nonatomic,copy)void (^starScore)(CGFloat score);
 @property (nonatomic, readonly) NSInteger numberOfStar;/**< 星星数量*/
 @property (nonatomic,assign)CGFloat score;/**< 评分 */
 @property (nonatomic,assign)CGFloat score_max;/**< 最大评分,默认为10.0f*/

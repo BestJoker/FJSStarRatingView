@@ -122,6 +122,10 @@
         score = 0.f;
     }
     _score = score;
+    //返回评分,外面使用
+    if (self.starScore) {
+        self.starScore(score);
+    }
     NSLog(@"评分: %f",score);
     [self.starForegroundView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.and.top.and.bottom.equalTo(self);
